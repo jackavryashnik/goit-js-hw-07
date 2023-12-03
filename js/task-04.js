@@ -1,13 +1,13 @@
 const validateForm = event => {
   event.preventDefault();
-  if (!form.email.value || !form.password.value) {
+  if (!form.email.value || !form.password.value || form.password.value.trim() === '') {
     alert('All form fields must be filled in');
-  } else {
-    const arr = {
+  } else if (form.email.value.trim() && form.password.value.trim()) {
+    const formData = {
       email: form.email.value.trim(),
       password: form.password.value.trim(),
     };
-    console.log(arr);
+    console.log(formData);
 
     form.reset();
   }
